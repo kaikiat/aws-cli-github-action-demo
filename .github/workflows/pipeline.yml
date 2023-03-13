@@ -40,6 +40,7 @@ jobs:
       - name: Setting up AWS CLI
         run: |
           ls
+          chmod 777 ./aws-cli.zip
           unzip ./aws-cli.zip
           sudo cp ./bin/aws /usr/local/bin/aws
           # sudo cp ./bin/aws_completer /usr/bin/aws_completer

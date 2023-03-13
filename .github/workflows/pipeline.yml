@@ -23,16 +23,18 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
       # Toggle this step to test "Installing AWS CLI" 
-      - name: Remove AWS CLI
-        run: |
-          sudo rm /usr/local/bin/aws
-          sudo rm -rf /usr/local/aws-cli
+      # - name: Remove AWS CLI
+      #   run: |
+      #     sudo rm /usr/local/bin/aws
+      #     sudo rm -rf /usr/local/aws-cli
       - name: Installing AWS CLI 
         run: |
           if command -v $(aws --version) >/dev/null 2>&1; then
             echo "AWS CLI not found. Installing it"
             sudo ./aws/install --update
+            python -m pip install awscli
           else
             echo "AWS CLI found"
           fi

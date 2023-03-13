@@ -40,12 +40,13 @@ jobs:
       - name: Setting up AWS CLI
         run: |
           ls
-          pwd
           # unzip ./aws-cli.zip
-          jar xvf ./aws-cli.zip
+          # jar xvf ./aws-cli.zip
           sudo cp ./bin/aws /usr/local/bin/aws
           # sudo cp ./bin/aws_completer /usr/bin/aws_completer
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - name: Verify AWS CLIE installation 
         run: |
           aws --version
+
+

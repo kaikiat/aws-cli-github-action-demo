@@ -23,16 +23,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Verify that aws cli is not installed
+      - name: Uninstall AWS CLI
+        run: |
+          sudo rm /usr/local/bin/aws
+          sudo rm /usr/local/bin/aws_completer
+          sudo rm -rf /usr/local/aws-cli
+      - name: Verify that AWS CLI is not installed
         run: |
           aws --version
           pwd
       # Refer to https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       - name: Setting up AWS CLI
         run: |
+          ls
           unzip ./aws-cli.zip
           cp /aws-cli /usr/local/aws-cli
-          mv /path/to/destination/file /path/to/new/destination/
           rm -rf /aws-cli
           cp /aws /usr/local/bin/aws
           cp /aws_completer /usr/bin/aws_completer

@@ -32,5 +32,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install aws cli
         run: |
-          chmod +x install.sh
+          ls
+          chmod +x i../../../install.sh
           ../../../install.sh "v2" "amd64"

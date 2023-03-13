@@ -41,11 +41,12 @@ jobs:
       # Refer to https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       - name: Setting up AWS CLI
         run: |
-          python --version
           sudo cp ./bin/aws /usr/local/bin/aws
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - name: Verify AWS CLIE installation 
         run: |
+          python --version
+          pip install encodings
           aws --version
 
 

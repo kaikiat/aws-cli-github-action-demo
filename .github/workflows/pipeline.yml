@@ -33,4 +33,4 @@ jobs:
       - name: Install aws cli
         run: |
           chmod +x install.sh
-          ./.github/workflows/install.sh "v2" "amd64"
+          ../../install.sh "v2" "amd64"

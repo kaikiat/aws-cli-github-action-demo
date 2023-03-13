@@ -46,6 +46,8 @@ jobs:
       - name: Verify AWS CLIE installation 
         run: |
           python --version
+          export LC_ALL=C.UTF-8
+          export LANG=C.UTF-8
           pip install -r requirements.txt
           aws --version
 

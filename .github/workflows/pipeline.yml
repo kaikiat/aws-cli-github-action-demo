@@ -45,6 +45,7 @@ jobs:
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - name: Install python dependencies
         run: |
+          python --version
           python -m pip install awscli
       - name: Verify AWS CLI installation 
         run: |

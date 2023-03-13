@@ -41,9 +41,8 @@ jobs:
       # Refer to https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       - name: Setting up AWS CLI
         run: |
-          sudo cp ./bin/aws /usr/local/bin/aws
-          # sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
-          sudo ./install.sh --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+          # sudo cp ./bin/aws /usr/local/bin/aws
+          sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - name: Install python dependencies
         run: |
           python -m pip install awscli

@@ -30,7 +30,7 @@ jobs:
           sudo rm -rf /usr/local/aws-cli
       - name: Verify that AWS CLI is not installed
         run: |
-          if command -v aws --version >/dev/null 2>&1; then
+          if command -v $(aws --version) >/dev/null 2>&1; then
             echo "AWS binary not found"
           else
             echo "AWS binary found"

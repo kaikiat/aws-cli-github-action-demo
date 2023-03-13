@@ -41,7 +41,8 @@ jobs:
         run: |
           ls
           chmod 777 ./aws-cli.zip
-          unzip ./aws-cli.zip
+          # unzip ./aws-cli.zip
+          unzip aws-cli.zip
           sudo cp ./bin/aws /usr/local/bin/aws
           # sudo cp ./bin/aws_completer /usr/bin/aws_completer
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update

@@ -30,7 +30,12 @@ jobs:
           sudo rm -rf /usr/local/aws-cli
       - name: Verify that AWS CLI is not installed
         run: |
-          aws --version
+          if output=$(aws --version); then
+              echo "AWS installed"
+          else
+              echo "AWS removed"
+              exit 1
+          fi
           pwd
       # Refer to https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
       - name: Setting up AWS CLI

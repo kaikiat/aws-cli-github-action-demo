@@ -40,13 +40,17 @@ jobs:
       - name: Setting up AWS CLI
         run: |
           ls
-          # unzip ./aws-cli.zip
-          # jar xvf ./aws-cli.zip
+          python --version
           sudo cp ./bin/aws /usr/local/bin/aws
-          # sudo cp ./bin/aws_completer /usr/bin/aws_completer
           sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - name: Verify AWS CLIE installation 
         run: |
           aws --version
 
 
+# curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+# unzip awscliv2.zip
+# sudo ./aws/install
+
+# curl -o awscli.tar.gz https://awscli.amazonaws.com/awscli.tar.gz
+# tar -xzf awscli.tar.gz

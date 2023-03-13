@@ -46,7 +46,7 @@ jobs:
       - name: Verify AWS CLIE installation 
         run: |
           python --version
-          pip install encodings
+          pip install -r requirements.txt
           aws --version
 
 

@@ -46,6 +46,7 @@ jobs:
           # rm -rf ./aws-cli
           sudo cp ./aws /usr/local/bin/aws
           sudo cp ./aws_completer /usr/bin/aws_completer
+          sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
       - name: Verify AWS CLIE installation 
         run: |
           aws --version

@@ -164,10 +164,10 @@ install_aws_cli(){
             msg_error "Failed to install AWS CLI - Make sure AWS_CLI_ARCH is set properly, current value is ${provided_arch}"
         elif [[ "$aws_path" =~ ^.*aws.*not.*found || -z "$aws_path" ]]; then
             # Fresh install
-            ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli
+            sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli
         else
             # Update
-            ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
+            sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
         fi
     fi
     msg_log "Installation completed"

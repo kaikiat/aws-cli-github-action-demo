@@ -40,8 +40,8 @@ jobs:
       - name: Setting up AWS CLI
         run: |
           ls
-          unzip ./aws-cli.zip
-          cp /aws-cli /usr/local/aws-cli
+          # unzip ./aws-cli.zip
+          # cp /aws-cli /usr/local/aws-cli
           rm -rf /aws-cli
           cp /aws /usr/local/bin/aws
           cp /aws_completer /usr/bin/aws_completer

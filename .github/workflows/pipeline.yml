@@ -35,7 +35,7 @@ jobs:
         run: |
           if command -v $(aws --version) >/dev/null 2>&1; then
             echo "AWS CLI not found. Installing it"
-            top & time sudo ./aws/install --update
+            sudo time ./aws/install --update
             time python -m pip install awscli
           else
             echo "AWS CLI found"
